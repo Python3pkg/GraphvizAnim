@@ -19,13 +19,13 @@ from random import sample
 
 from gvanim import Animation, render, gif
 
-N = range( 6 )
+N = list(range( 6))
 K = 3
 
 G = dict( ( v, sample( N, K ) ) for v in N )
 
 ga = Animation()
-for v, adj in G.items():
+for v, adj in list(G.items()):
     for u in adj:
         ga.add_edge( v, u )
 ga.next_step()
